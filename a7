@@ -1,0 +1,36 @@
+from binarytree import build, Node
+
+# Definindo a função para adicionar e remover elementos em uma árvore
+def adicionar_e_remover(arvore, valor_adicionar, valor_remover):
+    # Adicionando um valor à árvore
+    arvore.insert(valor_adicionar)
+
+    # Removendo um valor da árvore
+    try:
+        arvore.remove(valor_remover)
+    except ValueError as e:
+        print(f"Erro ao remover {valor_remover}: {e}")
+
+# Lista 1
+lista1 = [45, 20, 30, 60, 81, 97, 100, 7, 8, 4]
+
+# Criando a árvore para a Lista 1
+arvore_lista1 = build(lista1)
+
+# Adicionando 50 e removendo 60 (um nó com dois filhos) na árvore da Lista 1
+adicionar_e_remover(arvore_lista1, 50, 60)
+
+print("\nÁrvore para Lista 1:")
+print(arvore_lista1)
+
+# Lista 2
+lista2 = [15, 6, 18, 3, 7, 16, 20, 4]
+
+# Criando a árvore para a Lista 2
+arvore_lista2 = build(lista2)
+
+# Adicionando 10 e removendo 6 (um nó com dois filhos) na árvore da Lista 2
+adicionar_e_remover(arvore_lista2, 10, 6)
+
+print("\nÁrvore para Lista 2:")
+print(arvore_lista2)
